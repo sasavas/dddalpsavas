@@ -1,9 +1,9 @@
-using CustomSolutionName.Domain.ErrorCodes;
-using CustomSolutionName.Domain.Exceptions;
+using CustomSolutionName.Application.Exceptions;
+using CustomSolutionName.SharedLibrary.Exceptions;
 
 namespace CustomSolutionName.Application.UseCases.Users.Exceptions;
 
-public class UserWithSameEmailAlreadyExistsException : BaseException
+public class UserWithSameEmailAlreadyExistsException : AppException
 {
     public UserWithSameEmailAlreadyExistsException() : base(ErrorCodes.USER_EMAIL_TAKEN)
     {

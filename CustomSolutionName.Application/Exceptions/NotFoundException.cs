@@ -1,9 +1,8 @@
-using CustomSolutionName.Domain.ErrorCodes;
-using CustomSolutionName.Domain.Exceptions;
+using CustomSolutionName.SharedLibrary.Exceptions;
 
 namespace CustomSolutionName.Application.Exceptions
 {
-    public class NotFoundException : BaseException
+    public class NotFoundException : AppException
     {
         public NotFoundException() : base(ErrorCodes.NOT_FOUND) { }
     }

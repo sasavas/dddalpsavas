@@ -1,11 +1,11 @@
-namespace CustomSolutionName.Domain.ErrorCodes;
+namespace CustomSolutionName.SharedLibrary.Exceptions;
 
 public static class ErrorCodes
 {
     // Internal Errors
     public static readonly ErrorCode INTERNAL_ERROR = new(nameof(INTERNAL_ERROR), "");
-    public static readonly ErrorCode APP_ERROR = new(nameof(APP_ERROR), "CustomSolutionName.Application logic error!");
-    public static readonly ErrorCode DATABASE_UPDATE_ERROR = new(nameof(DATABASE_UPDATE_ERROR), "Could not finish database operation successfully");
+    public static readonly ErrorCode APPLICATION_ERROR = new(nameof(APPLICATION_ERROR), "CustomSolutionName.Application logic error!");
+    public static readonly ErrorCode DB_UPDATE_ERROR = new(nameof(DB_UPDATE_ERROR), "Could not finish database operation successfully");
     
     // Generic Errors
     public static readonly ErrorCode VALIDATION_ERROR = new(nameof(VALIDATION_ERROR), "Validation Error");
@@ -18,5 +18,3 @@ public static class ErrorCodes
     public static readonly ErrorCode USER_EMAIL_TAKEN = new (nameof(USER_EMAIL_TAKEN), "This email address is already taken");
     public static readonly ErrorCode USER_NOT_VALID_GENDER = new(nameof(USER_NOT_VALID_GENDER), "Not a valid gender");
 }
-
-public record ErrorCode(string CODE, string DESCRIPTION);

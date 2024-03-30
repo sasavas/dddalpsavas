@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using CustomSolutionName.Api.Extensions;
-using CustomSolutionName.Domain.ErrorCodes;
-using CustomSolutionName.Domain.Exceptions;
+using CustomSolutionName.SharedLibrary.Exceptions;
 using EntityFramework.Exceptions.Common;
 using Microsoft.EntityFrameworkCore;
 
@@ -32,7 +31,7 @@ public class ExceptionMiddleware : IMiddleware
             await Results.Problem(
                     detail: e.Message,
                     statusCode: StatusCodes.Status400BadRequest,
-                    type: ErrorCodes.APP_ERROR.CODE)
+                    type: ErrorCodes.APPLICATION_ERROR.CODE)
                 .ExecuteAsync(context);
         }
         catch (UniqueConstraintException e)
@@ -52,7 +51,7 @@ public class ExceptionMiddleware : IMiddleware
             await Results.Problem(
                     detail: "Could not finish database operation successfully",
                     statusCode: StatusCodes.Status500InternalServerError,
-                    type: ErrorCodes.DATABASE_UPDATE_ERROR.CODE)
+                    type: ErrorCodes.DB_UPDATE_ERROR.CODE)
                 .ExecuteAsync(context);
         }
         catch (Exception e)

@@ -2,9 +2,9 @@ using CustomSolutionName.SharedLibrary.Exceptions;
 
 namespace CustomSolutionName.Domain.Exceptions;
 
-public class ValidationException : BaseException
+public class DomainException : BaseException
 {
-    public ValidationException(ErrorCode error) : base(error)
+    protected DomainException(ErrorCode error) : base(error)
     {
     }
 }

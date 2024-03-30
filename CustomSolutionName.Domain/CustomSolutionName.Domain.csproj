@@ -11,4 +11,8 @@
       <Folder Include="Features\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CustomSolutionName.SharedLibrary\CustomSolutionName.SharedLibrary.csproj" />
+    </ItemGroup>
+
 </Project>
