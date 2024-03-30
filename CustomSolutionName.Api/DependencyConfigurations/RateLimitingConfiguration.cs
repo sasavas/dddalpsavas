@@ -7,7 +7,7 @@ public static class RateLimitingConfiguration
 {
     public const string MoreLimitedPolicy = "ImportFilePolicy";
     
-    public static void AddRateLimitingConfiguration(this IServiceCollection services)
+    public static IServiceCollection AddRateLimitingConfiguration(this IServiceCollection services)
     {
         services.AddRateLimiter(options =>
         {
@@ -48,5 +48,7 @@ public static class RateLimitingConfiguration
                 configOptions.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
             });
         });
+
+        return services;
     }
 }

@@ -4,7 +4,7 @@ namespace CustomSolutionName.Api.DependencyConfigurations;
 
 public static class SwaggerConfiguration
 {
-    public static void AddSwaggerConfiguration(this IServiceCollection services)
+    public static IServiceCollection AddSwaggerConfiguration(this IServiceCollection services)
     {
         services.AddSwaggerGen(option =>
         {
@@ -34,5 +34,7 @@ public static class SwaggerConfiguration
                 }
             });
         });
+
+        return services;
     }
 }

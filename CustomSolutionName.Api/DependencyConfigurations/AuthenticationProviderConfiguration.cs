@@ -4,7 +4,7 @@ namespace CustomSolutionName.Api.DependencyConfigurations;
 
 public static class AuthenticationProviderConfiguration
 {
-    public static void RegisterAuthenticationProviders(
+    public static IServiceCollection AddAuthenticationProviders(
         this IServiceCollection services, ConfigurationManager configuration)
     {
         services
@@ -13,5 +13,7 @@ public static class AuthenticationProviderConfiguration
 
         services.AddAuthentication()
             .AddCookie("Cookies");
+
+        return services;
     }
 }
