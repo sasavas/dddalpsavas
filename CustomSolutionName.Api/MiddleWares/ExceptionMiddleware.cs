@@ -26,27 +26,27 @@ public class ExceptionMiddleware : IMiddleware
         }
         catch (BaseException e)
         {
-            _logger.LogInformation(e, "CustomSolutionName.Domain exception occurred with message");
+            _logger.LogInformation(e, "{errorCode}", e.ErrorCode.CODE);
 
             await Results.Problem(
                     detail: e.Message,
                     statusCode: StatusCodes.Status400BadRequest,
-                    type: ErrorCodes.APPLICATION_ERROR.CODE)
+                    type: e.ErrorCode.CODE)
                 .ExecuteAsync(context);
         }
         catch (UniqueConstraintException e)
         {
-            _logger.LogInformation(e, "There is already an entry in the database with the same key");
-            
+            _logger.LogInformation(e, "DB Unique constraint exception");
+
             await Results.Problem(
-                    detail: "Duplicate key exception",
+                detail: _environment.IsDevelopment() ? e.Message : "Duplicate key exception",
                     statusCode: StatusCodes.Status409Conflict,
                     type: ErrorCodes.DUPLICATE_ENTITY.CODE)
                 .ExecuteAsync(context);
         }
         catch (DbUpdateException e)
         {
-            _logger.LogError(e, "Could not finish database operation successfully");
+            _logger.LogError(e, "Error while database operation");
             
             await Results.Problem(
                     detail: "Could not finish database operation successfully",
