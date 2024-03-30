@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 using CustomSolutionName.Api.Authentication;
-using CustomSolutionName.Api.Configurations;
+using CustomSolutionName.Api.DependencyConfigurations;
 using CustomSolutionName.Api.MiddleWares;
 using CustomSolutionName.Api.Utils;
 using CustomSolutionName.Application;
@@ -49,7 +49,7 @@ builder.WebHost.ConfigureKestrel(serverOptions =>
 
 
 builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("Jwt"));
-builder.Services.ConfigureOptions<JwtBearerOptionsSetup>();
+builder.Services.ConfigureOptions<JwtBearerOptionsConfiguration>();
 
 builder.Services.AddAuthorization();
 

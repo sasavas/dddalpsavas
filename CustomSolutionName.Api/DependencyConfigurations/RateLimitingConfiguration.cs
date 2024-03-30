@@ -1,7 +1,7 @@
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
 
-namespace CustomSolutionName.Api.Configurations;
+namespace CustomSolutionName.Api.DependencyConfigurations;
 
 public static class RateLimitingConfiguration
 {

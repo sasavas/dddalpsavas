@@ -1,6 +1,6 @@
 using Microsoft.OpenApi.Models;
 
-namespace CustomSolutionName.Api.Configurations;
+namespace CustomSolutionName.Api.DependencyConfigurations;
 
 public static class SwaggerConfiguration
 {

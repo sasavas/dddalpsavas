@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
-namespace CustomSolutionName.Api.Configurations;
+namespace CustomSolutionName.Api.DependencyConfigurations;
 
-public class JwtBearerOptionsSetup : IConfigureNamedOptions<JwtBearerOptions>
+public class JwtBearerOptionsConfiguration : IConfigureNamedOptions<JwtBearerOptions>
 {
     private readonly JwtOptions _jwtOptions;
 
-    public JwtBearerOptionsSetup(IOptions<JwtOptions> jwtOptions) 
+    public JwtBearerOptionsConfiguration(IOptions<JwtOptions> jwtOptions) 
     {
          _jwtOptions = jwtOptions.Value;
     }

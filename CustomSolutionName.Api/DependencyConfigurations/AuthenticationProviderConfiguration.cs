@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-namespace CustomSolutionName.Api.Configurations;
+namespace CustomSolutionName.Api.DependencyConfigurations;
 
-public static class AuthenticationProviderRegistries
+public static class AuthenticationProviderConfiguration
 {
     public static void RegisterAuthenticationProviders(
         this IServiceCollection services, ConfigurationManager configuration)
