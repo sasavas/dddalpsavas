@@ -44,7 +44,7 @@ public class RegisterUserCommandHandler(
                                    defaultUserRole,
                                    verificationCode);
             
-            var createdUser = userRepository.Create(user);
+            var createdUser = userRepository.Insert(user);
             
             // Send email to user-to-register
             await messageSenderGateway.SendMessageAsync(

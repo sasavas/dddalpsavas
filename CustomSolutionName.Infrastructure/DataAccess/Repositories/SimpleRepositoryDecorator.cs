@@ -14,7 +14,7 @@ public class SimpleRepositoryDecorator<TEntity, TId> : IRepository<TEntity, TId>
         BaseRepositoryImpl = new BaseRepositoryImpl<TEntity, TId>(dbContext);
     }
     
-    public TEntity Create(TEntity entity)
+    public TEntity Insert(TEntity entity)
     {
         return BaseRepositoryImpl.Create(entity);
     }

@@ -18,7 +18,7 @@ public class VerifyPasswordResetRequestHandler(
     public Task Handle(VerifyPasswordResetCommand command, CancellationToken cancellationToken)
     {
         var foundUser =
-            userRepository.FindUserWithPasswordRequestCode(command.Code)
+            userRepository.GetUserWithPasswordRequestCode(command.Code)
             ?? throw new NotFoundException();
 
         var hasValidPasswordResetRequest = foundUser.HasValidPasswordResetRequest();

@@ -16,5 +16,5 @@ public interface IUserRepository : IRepository<User, Guid>
 
     User? GetByVerificationCode(string guid);
     
-    User? FindUserWithPasswordRequestCode(Guid code);
+    User? GetUserWithPasswordRequestCode(Guid code);
 }

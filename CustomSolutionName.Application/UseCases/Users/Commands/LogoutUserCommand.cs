@@ -20,7 +20,7 @@ public sealed class LogoutUserCommandHandler(
 
         try
         {
-            blacklistedTokenRepository.Create(BlacklistedToken.Create(request.Token, DateTime.UtcNow, request.ActualExpiryDate.ToUniversalTime()));
+            blacklistedTokenRepository.Insert(BlacklistedToken.Create(request.Token, DateTime.UtcNow, request.ActualExpiryDate.ToUniversalTime()));
             unitOfWork.Commit();
         }
         catch (Exception e)

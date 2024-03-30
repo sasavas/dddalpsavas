@@ -48,7 +48,7 @@ internal class UserRepository : SimpleRepositoryDecorator<User, Guid>, IUserRepo
         return BaseRepositoryImpl.GetList().FirstOrDefault(user => user.VerificationCode == Guid.Parse(guid));
     }
 
-    public User? FindUserWithPasswordRequestCode(Guid code)
+    public User? GetUserWithPasswordRequestCode(Guid code)
     {
         return BaseRepositoryImpl
             .GetList()

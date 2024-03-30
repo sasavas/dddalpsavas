@@ -13,7 +13,7 @@ public interface IRepository<TAggregateRoot, in TId>
     
     IEnumerable<TAggregateRoot> GetList(Expression<Func<TAggregateRoot, bool>> filter);
 
-    TAggregateRoot Create(TAggregateRoot entity);
+    TAggregateRoot Insert(TAggregateRoot entity);
 
     TAggregateRoot Update(TAggregateRoot entity);
 

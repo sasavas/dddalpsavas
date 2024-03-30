@@ -19,7 +19,7 @@ public class MtRepositoryDecorator<TEntity, TId> : IMtRepository<TEntity, TId>
         BaseRepositoryImpl = new BaseRepositoryImpl<TEntity, TId>(dbContext);
     }
     
-    public TEntity Create(TEntity entity)
+    public TEntity Insert(TEntity entity)
     {
         entity.LearnerId = _learnerId;
         return BaseRepositoryImpl.Create(entity);
