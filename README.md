@@ -1,3 +1,5 @@
+This is not by any means a final project. It is a work in progress, and I did not have time to develop it to the point to casually use it.
+
 ## TODOs
  
 - [ ] Add sample Background jobs
